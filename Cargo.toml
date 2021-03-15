@@ -50,9 +50,9 @@ version = "0.3"
 features = ["dwrite", "minwindef", "sysinfoapi", "winbase", "winnt"]
 
 [target.'cfg(any(target_os = "macos", target_os = "ios"))'.dependencies]
-core-foundation = "0.9"
-core-graphics = "0.22"
-core-text = "19.1.0"
+core-foundation = {git = "https://github.com/gkd-rusters/core-foundation-rs.git", branch = "gkd", package = "core-foundation"}
+core-graphics = {git = "https://github.com/gkd-rusters/core-foundation-rs.git", branch = "gkd", package = "core-graphics"}
+core-text = {git = "https://github.com/gkd-rusters/core-foundation-rs.git", branch = "gkd", package = "core-text"}
 
 [target.'cfg(not(any(target_family = "windows", target_os = "macos", target_os = "ios")))'.dependencies]
 freetype = "0.7"
@@ -61,7 +61,7 @@ freetype = "0.7"
 servo-fontconfig = "0.5"
 
 [target.'cfg(not(any(target_arch = "wasm32", target_family = "windows", target_os = "android")))'.dependencies]
-dirs-next = "2.0"
+dirs = "2.0"
 
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
 walkdir = "2.1"
